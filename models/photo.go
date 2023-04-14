@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-// Photo represents the model for an photo
+// Photo represents the model for an user
 type Photo struct {
 	ID        uint   `gorm:"primaryKey"`
 	Title     string `gorm:"not null" json:"title" form:"title" valid:"required~Title is required"`
