@@ -67,8 +67,8 @@ func GetComment(ctx *gin.Context) {
 // @Accept json
 // @Produce json
 // @Success 200 {object} models.Comment
-// @Router /comments/{commentId} [delete]
 // @Security ApiKeyAuth
+// @Router /comments/{commentId} [delete]
 func DeleteComment(ctx *gin.Context) {
 	db := database.GetDB()
 	comment := models.Comment{}
@@ -90,8 +90,8 @@ func DeleteComment(ctx *gin.Context) {
 // @Produce json
 // @Param models.Comment body models.Comment true "create comment"
 // @Success 200 {object} models.Comment
-// @Router /comments [post]
 // @Security ApiKeyAuth
+// @Router /comments [post]
 func CreateComment(ctx *gin.Context) {
 	db := database.GetDB()
 	userData := ctx.MustGet("userData").(jwt.MapClaims)
@@ -133,8 +133,8 @@ func CreateComment(ctx *gin.Context) {
 // @Produce json
 // @Param models.Comment body models.Comment true "update comment"
 // @Success 200 {object} models.Comment
-// @Router /comments/{commentId} [put]
 // @Security ApiKeyAuth
+// @Router /comments/{commentId} [put]
 func UpdateComment(ctx *gin.Context) {
 	db := database.GetDB()
 	userData := ctx.MustGet("userData").(jwt.MapClaims)

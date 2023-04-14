@@ -1,9 +1,3 @@
-swagger: "2.0"
-securityDefinitions:  
-   Bearer:    
-     type: apiKey    
-     name: Authorization    
-     in: header
 definitions:
   models.Comment:
     properties:
@@ -131,6 +125,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - ApiKeyAuth: []
       summary: Create the comment
       tags:
       - comments
@@ -146,6 +142,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - ApiKeyAuth: []
       summary: Delete detail
       tags:
       - comments
@@ -181,6 +179,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - ApiKeyAuth: []
       summary: Update the comment
       tags:
       - comments
@@ -217,6 +217,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - ApiKeyAuth: []
       summary: Create the photo
       tags:
       - photos
@@ -232,6 +234,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - ApiKeyAuth: []
       summary: Delete photo
       tags:
       - photos
@@ -267,6 +271,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - ApiKeyAuth: []
       summary: Update the photo
       tags:
       - photos
@@ -303,6 +309,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.SocialMedia'
+      security:
+      - ApiKeyAuth: []
       summary: Create the social media
       tags:
       - socialMedias
@@ -318,6 +326,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.SocialMedia'
+      security:
+      - ApiKeyAuth: []
       summary: Delete social media
       tags:
       - socialMedias
@@ -333,6 +343,29 @@ paths:
           schema:
             $ref: '#/definitions/models.SocialMedia'
       summary: Get detail
+      tags:
+      - socialMedias
+    put:
+      consumes:
+      - application/json
+      description: Update the social media
+      parameters:
+      - description: update social media
+        in: body
+        name: models.SocialMedia
+        required: true
+        schema:
+          $ref: '#/definitions/models.SocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SocialMedia'
+      security:
+      - ApiKeyAuth: []
+      summary: Update the social media
       tags:
       - socialMedias
   /users/login:
@@ -379,3 +412,4 @@ paths:
       summary: Create the user
       tags:
       - users
+swagger: "2.0"
