@@ -89,8 +89,17 @@ definitions:
       username:
         type: string
     type: object
+host: https://mygram-final-project-production.up.railway.app/
 info:
-  contact: {}
+  contact:
+    email: soberkoder@swagger.io
+    name: API Support
+  description: This is a sample service for managing books
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/license/LICENSE-2.0.html
+  title: MyGram API
+  version: "1.0"
 paths:
   /comments:
     get:
@@ -412,4 +421,9 @@ paths:
       summary: Create the user
       tags:
       - users
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"
