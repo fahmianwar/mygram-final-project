@@ -68,6 +68,7 @@ func GetPhoto(ctx *gin.Context) {
 // @Produce json
 // @Success 200 {object} models.Photo
 // @Router /photos/{photoId} [delete]
+// @Security ApiKeyAuth
 func DeletePhoto(ctx *gin.Context) {
 	db := database.GetDB()
 	photo := models.Photo{}
@@ -90,6 +91,7 @@ func DeletePhoto(ctx *gin.Context) {
 // @Param models.Photo body models.Photo true "create photo"
 // @Success 200 {object} models.Photo
 // @Router /photos [post]
+// @Security ApiKeyAuth
 func CreatePhoto(ctx *gin.Context) {
 	db := database.GetDB()
 	userData := ctx.MustGet("userData").(jwt.MapClaims)
@@ -132,6 +134,7 @@ func CreatePhoto(ctx *gin.Context) {
 // @Param models.Photo body models.Photo true "update photo"
 // @Success 200 {object} models.Photo
 // @Router /photos/{photoId} [put]
+// @Security ApiKeyAuth
 func UpdatePhoto(ctx *gin.Context) {
 	db := database.GetDB()
 	userData := ctx.MustGet("userData").(jwt.MapClaims)

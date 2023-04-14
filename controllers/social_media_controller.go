@@ -68,6 +68,7 @@ func GetSocialMedia(ctx *gin.Context) {
 // @Produce json
 // @Success 200 {object} models.SocialMedia
 // @Router /socialMedias/{socialMediaId} [delete]
+// @Security ApiKeyAuth
 func DeleteSocialMedia(ctx *gin.Context) {
 	db := database.GetDB()
 	socialMedia := models.SocialMedia{}
@@ -90,6 +91,7 @@ func DeleteSocialMedia(ctx *gin.Context) {
 // @Param models.SocialMedia body models.SocialMedia true "create social media"
 // @Success 200 {object} models.SocialMedia
 // @Router /socialMedias [post]
+// @Security ApiKeyAuth
 func CreateSocialMedia(ctx *gin.Context) {
 	db := database.GetDB()
 	userData := ctx.MustGet("userData").(jwt.MapClaims)
@@ -123,6 +125,16 @@ func CreateSocialMedia(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, gin.H{"message": "Created SocialMedia Success", "data": socialMedia})
 }
 
+// UpdateSocialMedia godoc
+// @Summary Update the social media
+// @Description Update the social media
+// @Tags socialMedias
+// @Accept json
+// @Produce json
+// @Param models.SocialMedia body models.SocialMedia true "update social media"
+// @Success 200 {object} models.SocialMedia
+// @Router /socialMedias/{socialMediaId} [put]
+// @Security ApiKeyAuth
 func UpdateSocialMedia(ctx *gin.Context) {
 	db := database.GetDB()
 	userData := ctx.MustGet("userData").(jwt.MapClaims)
