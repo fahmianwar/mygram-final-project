@@ -26,13 +26,18 @@ var (
 func UserRegister(ctx *gin.Context) {
 	db := database.GetDB()
 	contentType := helpers.GetContenType(ctx)
-	user := models.UserRegister{}
+	userRegister := models.UserRegister{}
 
 	if contentType == appJSON {
-		ctx.ShouldBindJSON(&user)
+		ctx.ShouldBindJSON(&userRegister)
 	} else {
-		ctx.ShouldBind(&user)
+		ctx.ShouldBind(&userRegister)
 	}
+
+	user := models.User{}
+	user.Username = userRegister.Username
+	user.Email = userRegister.Email
+	user.Age = userRegister.Age
 
 	err := db.Debug().Create(&user).Error
 
