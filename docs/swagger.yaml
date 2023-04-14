@@ -374,3 +374,8 @@ paths:
       tags:
       - users
 swagger: "2.0"
+securityDefinitions:  
+   Bearer:    
+     type: rahasia    
+     name: Authorization    
+     in: header
