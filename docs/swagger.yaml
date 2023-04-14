@@ -89,7 +89,7 @@ definitions:
       username:
         type: string
     type: object
-host: https://mygram-final-project-production.up.railway.app/
+host: mygram-final-project-production.up.railway.app
 info:
   contact:
     email: soberkoder@swagger.io

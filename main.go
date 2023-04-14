@@ -14,7 +14,7 @@ import (
 // @contact.email soberkoder@swagger.io
 // @license.name Apache 2.0
 // @license.url http://www.apache.org/license/LICENSE-2.0.html
-// @host https://mygram-final-project-production.up.railway.app/
+// @host mygram-final-project-production.up.railway.app
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
 // @name Authorization
