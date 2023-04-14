@@ -88,7 +88,7 @@ func DeleteSocialMedia(ctx *gin.Context) {
 // @Tags socialMedias
 // @Accept json
 // @Produce json
-// @Param models.SocialMedia body models.SocialMedia true "create social media"
+// @Param models.SocialMediaRequest body models.SocialMediaRequest true "create social media"
 // @Success 200 {object} models.SocialMedia
 // @Security ApiKeyAuth
 // @Router /socialMedias [post]
@@ -98,15 +98,19 @@ func CreateSocialMedia(ctx *gin.Context) {
 	contentType := helpers.GetContenType(ctx)
 
 	socialMedia := models.SocialMedia{}
+	socialMediaRequest := models.SocialMediaRequest{}
+
 	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
-		ctx.ShouldBindJSON(&socialMedia)
+		ctx.ShouldBindJSON(&socialMediaRequest)
 	} else {
-		ctx.ShouldBind(&socialMedia)
+		ctx.ShouldBind(&socialMediaRequest)
 	}
 
 	socialMedia.UserID = userID
+	socialMedia.SocialMediaUrl = socialMediaRequest.SocialMediaUrl
+	socialMedia.Name = socialMediaRequest.Name
 
 	if err := db.Debug().Where("id = ?", userID).First(&socialMedia.User).Error; err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "User not found!"})

@@ -88,7 +88,7 @@ func DeletePhoto(ctx *gin.Context) {
 // @Tags photos
 // @Accept json
 // @Produce json
-// @Param models.Photo body models.Photo true "create photo"
+// @Param models.PhotoRequest body models.PhotoRequest true "create photo"
 // @Success 200 {object} models.Photo
 // @Security ApiKeyAuth
 // @Router /photos [post]
@@ -98,15 +98,20 @@ func CreatePhoto(ctx *gin.Context) {
 	contentType := helpers.GetContenType(ctx)
 
 	photo := models.Photo{}
+	photoRequest := models.PhotoRequest{}
+
 	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
-		ctx.ShouldBindJSON(&photo)
+		ctx.ShouldBindJSON(&photoRequest)
 	} else {
-		ctx.ShouldBind(&photo)
+		ctx.ShouldBind(&photoRequest)
 	}
 
 	photo.UserID = userID
+	photo.Caption = photoRequest.Caption
+	photo.PhotoUrl = photoRequest.PhotoUrl
+	photo.Title = photoRequest.Title
 
 	if err := db.Debug().Where("id = ?", userID).First(&photo.User).Error; err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "User not found!"})

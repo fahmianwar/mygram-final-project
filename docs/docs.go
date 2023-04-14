@@ -65,11 +65,11 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "description": "create comment",
-                        "name": "models.Comment",
+                        "name": "models.CommentRequest",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.Comment"
+                            "$ref": "#/definitions/models.CommentRequest"
                         }
                     }
                 ],
@@ -211,11 +211,11 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "description": "create photo",
-                        "name": "models.Photo",
+                        "name": "models.PhotoRequest",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.Photo"
+                            "$ref": "#/definitions/models.PhotoRequest"
                         }
                     }
                 ],
@@ -357,11 +357,11 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "description": "create social media",
-                        "name": "models.SocialMedia",
+                        "name": "models.SocialMediaRequest",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.SocialMedia"
+                            "$ref": "#/definitions/models.SocialMediaRequest"
                         }
                     }
                 ],
@@ -560,6 +560,17 @@ const docTemplate = `{
                 }
             }
         },
+        "models.CommentRequest": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "photoId": {
+                    "type": "integer"
+                }
+            }
+        },
         "models.Photo": {
             "type": "object",
             "properties": {
@@ -589,6 +600,20 @@ const docTemplate = `{
                 }
             }
         },
+        "models.PhotoRequest": {
+            "type": "object",
+            "properties": {
+                "caption": {
+                    "type": "string"
+                },
+                "photoUrl": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
         "models.SocialMedia": {
             "type": "object",
             "properties": {
@@ -612,6 +637,17 @@ const docTemplate = `{
                 },
                 "userId": {
                     "type": "integer"
+                }
+            }
+        },
+        "models.SocialMediaRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "socialMediaUrl": {
+                    "type": "string"
                 }
             }
         },

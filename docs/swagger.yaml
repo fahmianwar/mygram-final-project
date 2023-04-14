@@ -18,6 +18,13 @@ definitions:
       userId:
         type: integer
     type: object
+  models.CommentRequest:
+    properties:
+      message:
+        type: string
+      photoId:
+        type: integer
+    type: object
   models.Photo:
     properties:
       caption:
@@ -37,6 +44,15 @@ definitions:
       userId:
         type: integer
     type: object
+  models.PhotoRequest:
+    properties:
+      caption:
+        type: string
+      photoUrl:
+        type: string
+      title:
+        type: string
+    type: object
   models.SocialMedia:
     properties:
       createdAt:
@@ -53,6 +69,13 @@ definitions:
         $ref: '#/definitions/models.User'
       userId:
         type: integer
+    type: object
+  models.SocialMediaRequest:
+    properties:
+      name:
+        type: string
+      socialMediaUrl:
+        type: string
     type: object
   models.User:
     properties:
@@ -123,10 +146,10 @@ paths:
       parameters:
       - description: create comment
         in: body
-        name: models.Comment
+        name: models.CommentRequest
         required: true
         schema:
-          $ref: '#/definitions/models.Comment'
+          $ref: '#/definitions/models.CommentRequest'
       produces:
       - application/json
       responses:
@@ -215,10 +238,10 @@ paths:
       parameters:
       - description: create photo
         in: body
-        name: models.Photo
+        name: models.PhotoRequest
         required: true
         schema:
-          $ref: '#/definitions/models.Photo'
+          $ref: '#/definitions/models.PhotoRequest'
       produces:
       - application/json
       responses:
@@ -307,10 +330,10 @@ paths:
       parameters:
       - description: create social media
         in: body
-        name: models.SocialMedia
+        name: models.SocialMediaRequest
         required: true
         schema:
-          $ref: '#/definitions/models.SocialMedia'
+          $ref: '#/definitions/models.SocialMediaRequest'
       produces:
       - application/json
       responses:

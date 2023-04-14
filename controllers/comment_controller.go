@@ -88,7 +88,7 @@ func DeleteComment(ctx *gin.Context) {
 // @Tags comments
 // @Accept json
 // @Produce json
-// @Param models.Comment body models.Comment true "create comment"
+// @Param models.CommentRequest body models.CommentRequest true "create comment"
 // @Success 200 {object} models.Comment
 // @Security ApiKeyAuth
 // @Router /comments [post]
@@ -98,15 +98,19 @@ func CreateComment(ctx *gin.Context) {
 	contentType := helpers.GetContenType(ctx)
 
 	comment := models.Comment{}
+	commentRequest := models.CommentRequest{}
+
 	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
-		ctx.ShouldBindJSON(&comment)
+		ctx.ShouldBindJSON(&commentRequest)
 	} else {
-		ctx.ShouldBind(&comment)
+		ctx.ShouldBind(&commentRequest)
 	}
 
 	comment.UserID = userID
+	comment.Message = commentRequest.Message
+	comment.PhotoID = commentRequest.PhotoID
 
 	if err := db.Debug().Where("id = ?", userID).First(&comment.User).Error; err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "User not found!"})
