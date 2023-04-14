@@ -3,6 +3,7 @@ package database
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"mygram-final-project/models"
 
@@ -11,11 +12,11 @@ import (
 )
 
 var (
-	host     = "localhost"
-	user     = "postgres"
-	password = "postgres"
-	dbPort   = "5432"
-	dbName   = "mygram-final-project"
+	host     = os.Getenv("PGHOST")
+	user     = os.Getenv("PGUSER")
+	password = os.Getenv("PGPASSWORD")
+	dbPort   = os.Getenv("PGPORT")
+	dbName   = os.Getenv("PGDATABASE")
 	db       *gorm.DB
 	err      error
 )
