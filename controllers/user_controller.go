@@ -38,6 +38,7 @@ func UserRegister(ctx *gin.Context) {
 	user.Username = userRegister.Username
 	user.Email = userRegister.Email
 	user.Age = userRegister.Age
+	user.Password = userRegister.Password
 
 	err := db.Debug().Create(&user).Error
 
