@@ -13,7 +13,7 @@
         },
         "version": "1.0"
     },
-    "host": "mygram-final-project-production.up.railway.app",
+    "host": "localhost",
     "paths": {
         "/comments": {
             "get": {
