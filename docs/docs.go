@@ -12,7 +12,7 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "contact": {
             "name": "Github Repo",
-            "email": "https://github.com/fahmianwar/mygram-final-project"
+            "url": "https://github.com/fahmianwar/mygram-final-project"
         },
         "version": "{{.Version}}"
     },

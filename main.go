@@ -11,7 +11,7 @@ import (
 // @description This is a sample service for managing MyGram API
 // @termOfService http://swagger.io/terms/
 // @contact.name Github Repo
-// @contact.email https://github.com/fahmianwar/mygram-final-project
+// @contact.url https://github.com/fahmianwar/mygram-final-project
 // @host localhost
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header

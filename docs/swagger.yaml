@@ -115,8 +115,8 @@ definitions:
 host: localhost
 info:
   contact:
-    email: https://github.com/fahmianwar/mygram-final-project
     name: Github Repo
+    url: https://github.com/fahmianwar/mygram-final-project
   description: This is a sample service for managing MyGram API
   title: MyGram API
   version: "1.0"
