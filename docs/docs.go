@@ -11,12 +11,8 @@ const docTemplate = `{
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
         "contact": {
-            "name": "API Support",
-            "email": "soberkoder@swagger.io"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/license/LICENSE-2.0.html"
+            "name": "Github Repo",
+            "email": "https://github.com/fahmianwar/mygram-final-project"
         },
         "version": "{{.Version}}"
     },
@@ -722,7 +718,7 @@ var SwaggerInfo = &swag.Spec{
 	BasePath:         "",
 	Schemes:          []string{},
 	Title:            "MyGram API",
-	Description:      "This is a sample service for managing books",
+	Description:      "This is a sample service for managing MyGram API",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }
