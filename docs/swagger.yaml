@@ -112,7 +112,7 @@ definitions:
       username:
         type: string
     type: object
-host: localhost
+host: mygram-final-project-production.up.railway.app
 info:
   contact: {}
   description: This is a sample service for managing MyGram API

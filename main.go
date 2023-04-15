@@ -12,7 +12,7 @@ import (
 // @termOfService http://swagger.io/terms/
 // @license.name Github Repo
 // @license.url https://github.com/fahmianwar/mygram-final-project
-// @host localhost
+// @host mygram-final-project-production.up.railway.app
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
 // @name Authorization
