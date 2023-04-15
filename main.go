@@ -8,7 +8,7 @@ import (
 
 // @title MyGram API
 // @version 1.0
-// @description This is a sample service for managing books
+// @description This is a sample service for managing MyGram API
 // @termOfService http://swagger.io/terms/
 // @contact.name Github Repo
 // @contact.email https://github.com/fahmianwar/mygram-final-project
