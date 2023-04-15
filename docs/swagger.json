@@ -3,7 +3,8 @@
     "info": {
         "description": "This is a sample service for managing MyGram API",
         "title": "MyGram API",
-        "contact": {
+        "contact": {},
+        "license": {
             "name": "Github Repo",
             "url": "https://github.com/fahmianwar/mygram-final-project"
         },

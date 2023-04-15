@@ -114,10 +114,11 @@ definitions:
     type: object
 host: localhost
 info:
-  contact:
+  contact: {}
+  description: This is a sample service for managing MyGram API
+  license:
     name: Github Repo
     url: https://github.com/fahmianwar/mygram-final-project
-  description: This is a sample service for managing MyGram API
   title: MyGram API
   version: "1.0"
 paths:

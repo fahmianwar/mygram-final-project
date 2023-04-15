@@ -10,7 +10,8 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "contact": {
+        "contact": {},
+        "license": {
             "name": "Github Repo",
             "url": "https://github.com/fahmianwar/mygram-final-project"
         },
